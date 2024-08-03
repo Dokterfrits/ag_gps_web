@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  webviewer:
+    image: python:3.10
+#    build: ./webviewer
+#    command: bash -c "
+#      python manage.py migrate
+#      && python manage.py runserver 0.0.0.0:8000"
+#    volumes:
+#      - ./webviewer:/usr/src/app
+#      - persistent-volume:/vol/converter
+#      - static_data:/vol/webviewer
+#      - /var/run/docker.sock:/var/run/docker.sock
+#
+#volumes:
+#  static_data:
+#  persistent-volume:
+#    external: true
