@@ -1,0 +1,20 @@
+Execute the following commands:
+
+# Update the package list to ensure we have the latest information on the newest versions of packages and their dependencies.
+sudo apt-get update
+
+# Install Git, a version control system used for tracking changes in source code during software development.
+sudo apt-get install git
+
+# Clone the repository from GitHub to the local machine. Replace the URL with the URL of the repository you want to clone.
+git clone https://github.com/Dokterfrits/ag_gps_web
+
+# Change directory to the newly cloned repository. This directory contains all the project files.
+cd ag_gps_web
+
+# Make the setup script executable. This is necessary to run the script.
+chmod +x setup.sh
+
+# Execute the setup script. This script will install Docker, Docker Compose, and any other dependencies required for the project.
+./setup.sh
+
