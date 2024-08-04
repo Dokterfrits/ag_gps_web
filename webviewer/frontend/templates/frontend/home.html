@@ -1,0 +1,9 @@
+{% extends "frontend/common/_base.jinja" %}
+{% load static %}
+
+
+{% block nav %}{% with pagetitle='Dashboard' %}{{ block.super }}{% endwith %}{% endblock %}
+
+{% block content %}
+    <h1>Welcome to the Home Page!</h1>
+{% endblock content %}

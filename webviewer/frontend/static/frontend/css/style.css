@@ -1,0 +1,226 @@
+.styled-table {
+   border-collapse: collapse;
+   overflow: hidden;
+   margin: 0;
+   font-size: 0.9em;
+   font-family: sans-serif;
+   min-width: 100%;
+   /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
+}
+
+.styled-table thead tr {
+   background-color: #4E73DF;
+   color: #ffffff;
+   text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    margin: 0;
+}
+
+.styled-table tbody tr {
+   border-bottom: 1px solid #dddddd;
+   font-weight: bold;
+}
+
+.styled-table tbody td {
+
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+   background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+   border-bottom: 2px solid #4E73DF;
+}
+
+.styled-table tbody tr.active-row {
+   font-weight: bold;
+   color: #4E73DF;
+}
+
+input[type=text] {
+   width: 100%
+}
+
+input[type=submit] {
+   background-color: #4E73DF;
+   border: none;
+   color: white;
+   padding: 10px 20px;
+   text-decoration: none;
+   margin: 0.1rem 1rem;
+   cursor: pointer;
+   border-radius: 5px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+	/* width: 150px;
+	height: 50px;
+   margin: 20px;
+   padding: 2%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+   align-content: center;
+	background: red;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+	background: #e62222; */
+}
+
+input[type=submit], input[type=submit] span {
+	transition: 200ms;
+}
+
+input[type=submit] .text {
+	transform: translateX(35px);
+	color: white;
+	font-weight: bold;
+}
+
+input[type=submit]:hover {
+	background: #325bcc;
+}
+
+input[type=submit]:hover .text {
+	color: transparent;
+}
+
+input[type=submit]:hover .icon {
+	width: 150px;
+	border-left: none;
+	transform: translateX(0);
+}
+
+input[type=submit]:focus {
+	outline: none;
+}
+
+/* Settings page --------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: aliceblue
+}
+
+.wrapper {
+    padding: 30px 50px;
+    border: 1px solid #e3e6f0;
+    border-radius: 0.35rem;
+    margin: 10px auto;
+    width: 100%
+}
+
+h4 {
+    letter-spacing: -1px;
+    font-weight: 400
+}
+
+.img {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    object-fit: cover
+}
+
+#img-section p,
+#deactivate p {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+    text-align: justify;
+    overflow-wrap: break-word;
+}
+
+#img-section b,
+#img-section button,
+#deactivate b {
+    font-size: 14px
+}
+
+label {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #777;
+    padding-left: 3px
+}
+
+.form-control {
+    border-radius: 10px
+}
+
+input[placeholder] {
+    font-weight: 500
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: 1.5px solid #FDCBCB;
+}
+
+select {
+    display: block;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    height: 40px;
+    padding: 5px 10px
+}
+
+select:focus {
+    outline: none
+}
+
+.button {
+    background-color: #fff;
+    color: #0779e4
+}
+
+.button:hover {
+    background-color: #0779e4;
+    color: #fff
+}
+
+.btn-primary {
+    background-color: #0779e4
+}
+
+.danger {
+    background-color: #fff;
+    color: #e20404;
+    border: 1px solid #ddd
+}
+
+.danger:hover {
+    background-color: #e20404;
+    color: #fff
+}
+
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
+
+
+@media(max-width:576px) {
+    .wrapper {
+        padding: 25px 20px
+    }
+
+    #deactivate {
+        line-height: 18px
+    }
+}

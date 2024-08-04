@@ -19,7 +19,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # copy project
 COPY . .
 
-COPY scripts /scripts
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 ## Run collectstatic during the build phase
 #RUN python manage.py collectstatic --noinput
@@ -33,7 +34,6 @@ RUN chown -R webuser:webuser ./data
 # RUN chown webuser:webuser ./data/database
 
 
-RUN chmod +x /scripts/*
 
 RUN mkdir -p /vol/webviewer/static
 RUN mkdir -p /vol/webviewer/media
@@ -49,4 +49,7 @@ USER webuser
 # Make port 8000 available to the world outside this container.
 EXPOSE 8000
 
-# ENTRYPOINT ["/scripts/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
+
+# define the default command to run
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
