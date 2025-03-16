@@ -12,43 +12,38 @@ ENV PYTHONUNBUFFERED=1
 COPY requirements.txt ./requirements.txt
 
 # install dependencies
-# RUN apt-get install -y libjpeg-dev zlib1g-dev gcc
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# copy project
+# copy the entire project
 COPY . .
 
-COPY entrypoint.sh /entrypoint.sh
+# copy entrypoint script and make it executable
+COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-## Run collectstatic during the build phase
-#RUN python manage.py collectstatic --noinput
-
+# add non-root user
 RUN adduser --disabled-password --gecos '' webuser
 
-# RUN chmod 755 ./data/database
-# RUN chmod -R 755 ./data/media
+# Change ownership of files
 RUN chown -R webuser:webuser ./
 RUN chown -R webuser:webuser ./data
-# RUN chown webuser:webuser ./data/database
 
-
-
+# create necessary directories
 RUN mkdir -p /vol/webviewer/static
 RUN mkdir -p /vol/webviewer/media
 
-# ADD ./data/media /vol/webviewer/media/
-
+# Change ownership of /vol
 RUN chown -R webuser:webuser /vol
 RUN chmod -R 755 /vol
 
 # switch to non-root user
 USER webuser
 
-# Make port 8000 available to the world outside this container.
+# Expose port 8000
 EXPOSE 8000
 
+# Set entrypoint to the script
 ENTRYPOINT ["/entrypoint.sh"]
 
 # define the default command to run

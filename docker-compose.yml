@@ -9,6 +9,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - "8000:8000"
+    entrypoint: /entrypoint.sh
 
 volumes:
   static_data:
